@@ -90,7 +90,7 @@ export default function Home() {
     <div
       onClick={clicked}
       onContextMenu={rightclicked}
-      className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-[900px] p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] border-white border">
+      className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] border-white border">
       <p></p>
       <h1
         className="font-bold"
@@ -99,7 +99,7 @@ export default function Home() {
           color: getColor(),  
         }}
       >
-        {keyPressed ? `Huhh Dont press me 😡` : ""}
+        {keyPressed ? `Not this way son 😡 ~ ${keyPressed}` : ""}
       </h1>
       {/* <div className="text-lg" style={{ color: "white" }}>
         {`Mouse clicked at: X = ${clickPosition.x}, Y = ${clickPosition.y}`}
@@ -115,7 +115,7 @@ export default function Home() {
             color: "white", // Set the text color to dark red
           }}
         >
-          OMG It's hurting 🤕  
+          I'm smart huhh  
         </div>
       )}
 {showclick && (
