@@ -99,7 +99,7 @@ export default function Home() {
           color: getColor(),  
         }}
       >
-        {keyPressed ? `Not this way son 😡 ~ ${keyPressed}` : ""}
+        {keyPressed ? ` I'm smart huhh😡 ~ ${keyPressed}` : ""}
       </h1>
       {/* <div className="text-lg" style={{ color: "white" }}>
         {`Mouse clicked at: X = ${clickPosition.x}, Y = ${clickPosition.y}`}
@@ -115,7 +115,7 @@ export default function Home() {
             color: "white", // Set the text color to dark red
           }}
         >
-          I'm smart huhh  
+          I'm smart huhh😎😎
         </div>
       )}
 {showclick && (
@@ -128,7 +128,7 @@ export default function Home() {
             color: "white", // Set the text color to dark red
           }}
         >
-          Why you clicked ! 
+          I'm smart huhh😎😎
         </div>
       )}
     </div>
