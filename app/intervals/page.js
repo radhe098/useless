@@ -5,7 +5,6 @@ import ichigoZanpakutoCover from "@/public/ichigoo.jpg";
 import ichigoZanpakuto from "@/public/ichigo.jpg";
 import ichigoZanpakuto2 from "@/public/zangetsu.png";
 export default function Home() {
-  console.log("Hello, World!");
 return (
   <>
     <div className="container mx-auto p-5">
