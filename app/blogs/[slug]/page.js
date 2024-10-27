@@ -27,7 +27,6 @@ export default function Page({ params }) {
 
     if (params.slug === currentHash) {
         return <>
-
     <div className="container">
       {/* Top Cover Image */}
       <div className="coverImage">
@@ -39,7 +38,6 @@ export default function Page({ params }) {
             layout="responsive  "
           />
       </div>
-
       {/* Blog Heading */}
       <h1 className="heading">What If Askeladd and Makima Got Married?</h1>
 
