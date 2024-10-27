@@ -15,7 +15,7 @@ export default function Page({ params }) {
     }
     function generateHashForInterval() {
         const now = new Date();
-        const halfHourInterval = Math.floor(now.getTime() / (2 * 60 * 1000));
+        const halfHourInterval = Math.floor(now.getTime() / (20 * 60 * 1000));
         const input = `${halfHourInterval}askeladd098`; // Combine halfHourInterval with the constant string
         console.log("Input for Hash:", input);
         return customHash(input); // Generate hash from combined input
@@ -78,9 +78,9 @@ export default function Page({ params }) {
         <p>Both Askeladd and Makima thrive on power and control. In a marriage, this could manifest in a constant battle for dominance. Askeladd, with his strategic mindset, would likely attempt to outmaneuver Makima, while she would use her manipulative tactics to keep him in check. Their power struggle could lead to a dynamic filled with tension and intrigue, as each tries to assert their influence over the other.</p>
         
         <h2>Shared Ambitions</h2>
-        <p>While their methods may differ, both characters are driven by their ambitions. Askeladd seeks to create a legacy and make a name for himself, while Makima desires to control the world around her. Their shared understanding of ambition could lead to a mutual respect, even if their goals diverge. They might find common ground in their strategies and tactics, forming a formidable partnership in their pursuits.</p>
-        
+        <p>While their methods may differ, both characters are driven by their ambitions. Askeladd seeks to create a legacy and make a name for himself, while Makima desires to control the world around her. Their shared understanding of ambition could lead to a mutual respect, even if their goals diverge. They might find common ground in their strategies and tactics, forming a formidable partnership in their pursuits.</p>        
         <h2>Emotional Manipulation</h2>
+
         <p>Both characters excel at emotional manipulation, albeit in different ways. Askeladd often uses his charm and charisma to sway others, while Makima employs a more insidious form of control. In their marriage, this could lead to a toxic yet fascinating relationship where both parties are constantly testing the limits of each others loyalty and emotional boundaries.</p>
         
         <h2>Potential Conflicts</h2>
