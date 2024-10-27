@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import ichigoZanpakutoCover from "@/public/ichigo.jpg";
+import ichigoZanpakutoCover from "@/public/ichigoo.jpg";
 import ichigoZanpakuto from "@/public/ichigo.jpg";
-import ichigoZanpakuto2 from "@/public/ichigo.jpg";
+import ichigoZanpakuto2 from "@/public/zangetsu.png";
 export default function Home() {
   console.log("Hello, World!");
 return (
@@ -124,6 +124,10 @@ return (
           }
         }
       `}</style>
+
+    <p>
+    Zangetsu not only embodies Ichigo's physical strength but also represents his inner struggles and emotional growth throughout the Bleach series. As Ichigo faces various adversaries, Zangetsu evolves alongside him, mirroring his transformation from a rebellious teenager to a determined and powerful Soul Reaper. The relationship between Ichigo and Zangetsu is complex; at times, it feels like a mentor-student dynamic, while at other moments, it reflects the tension between Ichigo's human side and his Shinigami heritage. This bond highlights the importance of understanding one's true self, as Ichigo learns to harmonize with Zangetsu's spirit, ultimately unlocking the full potential of his Zanpakutō. The sword becomes a symbol of Ichigo's journey, reminding him that true strength lies not just in power but in the acceptance of his identity and the willingness to protect those he loves. Zangetsu's significance extends beyond its physical form, embodying the essence of Ichigo's spirit and the values he upholds.
+    </p>
     </div>
   </>
      ); }
