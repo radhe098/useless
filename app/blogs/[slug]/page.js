@@ -1,31 +1,28 @@
-"use client";
+"use client"; 
+import Link from 'next/link';
+import { generateSlug } from '@/utils/slug';
 import Image from 'next/image';
 import makima from  "@/public/makima.jpg";
 import askeladd from  "@/public/Askeladd.jpg";
 import makima2 from  "@/public/mmmakim.jpg";
+import { useState } from 'react';
 export default function Page({ params }) {
-    function customHash(str) {
-        let hash = 0;
-        for (let i = 0; i < str.length; i++) {
-            const char = str.charCodeAt(i);
-            hash = (hash << 5) - hash + char;
-            hash |= 0;  // Convert to a 32-bit integer
-        }
-        return hash.toString(16);  // Convert to hexadecimal string
-    }
-    function generateHashForInterval() {
-        const now = new Date();
-        const halfHourInterval = Math.floor(now.getTime() / (20 * 60 * 1000));
-        const input = `${halfHourInterval}askeladd098`; // Combine halfHourInterval with the constant string
-        console.log("Input for Hash:", input);
-        return customHash(input); // Generate hash from combined input
-    }
 
-    const currentHash = generateHashForInterval();
-    console.log(`http://localhost:3000/blogs/${currentHash}`);
-    console.log("Slug from URL:", params.slug);
+    const [nextpage, setnextpage] =useState(false);
+    setInterval(()=>{
+      setnextpage(!nextpage)
+    }, 4000);
+    const slug1 = generateSlug("askeladd098");
+    const slug2 = generateSlug("intervals");
+  
+    console.log(`Slug for askeladd098: ${slug1}`);
+    console.log(`Slug for anotherConstant: ${slug2}`);
 
-    if (params.slug === currentHash) {
+    // console.log(`http://localhost:3000/blogs/${currentHash}`);
+    // console.log("Slug from URL:", params.slug);
+
+  
+    if (params.slug === slug1) {
         return <>
     <div className="container">
       {/* Top Cover Image */}
@@ -40,9 +37,15 @@ export default function Page({ params }) {
       </div>
       {/* Blog Heading */}
       <h1 className="heading">What If Askeladd and Makima Got Married?</h1>
-
+      { nextpage ?
+        (<Link className='bg-red-600 text-white rounded-md' href={`/intervals/${slug2}`}>
+          Dashboard
+      </Link>): 
+      null
+      }
       {/* Blog Content */}
       <div className="content">
+      
         {/* Text Paragraphs */}
                 <p>In the realm of anime and manga, character pairings can lead to fascinating discussions about dynamics, personalities, and storytelling. Two characters that stand out in their respective series are <u>Askeladd</u> from <i>Vinland Saga</i> and <u>Makima</u> from <i>Chainsaw Man</i>. Both are complex figures, possessing unique traits and motivations that make them compelling. But what if these two enigmatic characters, each with their own ambitions and strategies, were to marry?</p>
         
@@ -65,7 +68,6 @@ export default function Page({ params }) {
           height={100}
           layout="responsive"
         />
-          
         </div>
 
         {/* Additional Paragraphs */}
@@ -166,14 +168,12 @@ export default function Page({ params }) {
         }
       `}</style>
     </div>
-
         </>;
 
-        // do something with the slug
-    }
+}
     return (
         <div className="flex justify-center items-center w-full h-full min-h-screen">
-            <iframe src="https://giphy.com/embed/E4cnIqDuNov1Pp10yC" width="480" height="360" style={{ border: 0 }} frameBorder="0" allowFullScreen></iframe>
+            <iframe src="https://giphy.com/embed/E4cnIqDuNov1Pp10yC" width="480" height="360" style={{ border: 0 }}  allowFullScreen></iframe>
             <p><a href="https://giphy.com/gifs/travisband-travis-E4cnIqDuNov1Pp10yC"></a></p>
         </div>
     );

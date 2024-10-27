@@ -1,9 +1,15 @@
 "use client"
 import Image from 'next/image';
-import understandingPeople from '@/public/oneee.jpg'; // Replace with actual image path
-import psychologyImage from '@/public/eagle.jpg'; // Replace with actual image path
+import Link from "next/link";
+import { generateSlug } from '@/utils/slug';
+import understandingPeople from '@/public/oneee.jpg'; 
+import psychologyImage from '@/public/neuralink.jpg'; 
 
-const UnderstandingPeoplePage = () => {
+export default function Page({ params }) { 
+  const slug4 = generateSlug("tbdfinal");
+  const slug3 = generateSlug("phase3"); 
+
+  if (params.slug === slug3){
   return (
     <>
       <div className="container mx-auto p-5">
@@ -82,8 +88,24 @@ const UnderstandingPeoplePage = () => {
         </div>
         <p>
         Analyzing people's mentality reveals profound insights into the complexities of human behavior and societal structures, showcasing how individual psychology intertwines with collective social dynamics. At its core, mentalities shape our perceptions, decisions, and interactions, influenced by various factors such as culture, upbringing, and personal experiences. Understanding these mental frameworks allows us to discern patterns in behavior, revealing how societal norms and values dictate what is deemed acceptable or desirable. For instance, the phenomenon of conformity highlights how individuals often align their thoughts and actions with group expectations, sometimes at the expense of their authenticity. This parallelism between individual mentality and societal influences underscores the significance of socialization in forming our identities. Moreover, the pressures of societal expectations can lead to cognitive dissonance when individuals find themselves in conflict with their beliefs or desires, sparking a struggle between personal authenticity and social acceptance. The interplay between mentalities and societal structures can also be observed in how certain ideologies propagate through generations, shaping collective behavior and reinforcing social hierarchies. Furthermore, as we navigate an increasingly interconnected world, the rapid exchange of ideas through technology challenges traditional mentalities and societal norms, fostering both conflict and innovation. In this context, analyzing people's mentalities becomes essential for understanding not only individual motivations but also the broader societal landscape, enabling us to address issues such as inequality, prejudice, and social change effectively. By delving into the intricacies of mental frameworks and their societal parallels, we can cultivate a deeper empathy for others, fostering a more inclusive and harmonious society that values both individual diversity and collective well-being.
-        </p>
 
+        </p>
+        <p>
+          In a world where technological advances rapidly redefine what it means
+          to experience reality, Elon Musk’s Neuralink promises to be a
+          game-changer. Neuralink, a brain-machine interface (BMI) startup, aims
+          to bridge the gap between human cognition and artificial intelligence
+          by implanting electrode-laden devices directly into the brain. With such
+          technologies, what if we could experience a “metal orgasm”—a digital
+          climax engineered to feel like the most intense moments of human
+          pleasure, yet enhanced and controlled by machines?
+        </p>
+        <p>
+          This article delves into what a metal orgasm could mean for humanity,
+          the science behind Neuralink, and the ethical implications of experiencing
+          pleasure through neural stimulation.
+        </p>
+        
         {/* Styling */}
         <style jsx>{`
           .container {
@@ -103,9 +125,21 @@ const UnderstandingPeoplePage = () => {
           }
           /* Tailwind CSS classes will handle the responsive design */
         `}</style>
+        <section>
+        <h2>Conclusion: Ethical Exploration and Future Implications</h2>
+        <p>
+          The journey toward a metal orgasm via Neuralink marks a profound step in
+          humanity’s quest to explore and control its own consciousness. Programmable
+          pleasure, emotional regulation, and artificial euphoria remain on the frontier
+          of neurotechnology, presenting a future where humans may one day engineer
+          their own sense of satisfaction.
+        </p>
+      </section>
       </div>
     </>
-  );
-};
+  );}
+  else{
 
-export default UnderstandingPeoplePage;
+  }
+
+}
