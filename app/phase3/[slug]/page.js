@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image';
+import Navbar from '@/components/Navbar';
 import Link from "next/link";
 import { generateSlug } from '@/utils/slug';
 import understandingPeople from '@/public/oneee.jpg'; 
@@ -12,21 +13,21 @@ export default function Page({ params }) {
   if (params.slug === slug3){
   return (
     <>
+    <Navbar />  
       <div className="container mx-auto p-5">
         {/* Top Cover Image */}
         <div className="coverImage mb-5">
           <Image
             src={understandingPeople}
             alt="Understanding People Cover Image"
-            width={1200}
-            height={200}
-            layout="responsive"
+            width={400}
+            height={400}
+            layout="fixed"
           />
         </div>
         
         {/* Blog Heading */}
         <h1 className="text-3xl font-bold my-5">How Epic Is Understanding People?</h1>
-
         {/* Blog Content */}
         <div className="content">
           {/* Text Paragraphs */}

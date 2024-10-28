@@ -37,3 +37,19 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* navbar styling */
+/* styles/globals.css */
+nav {
+  background-color: #1e3a8a; /* Dark blue */
+  padding: 1rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+nav a:hover {
+  text-decoration: underline;
+}

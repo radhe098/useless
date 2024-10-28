@@ -8,8 +8,7 @@ function customHash(str) {
       hash |= 0; 
     }
     return hash.toString(16); 
-  }
-  
+  } 
   export function generateSlug(input) {
     const now = new Date();
     const halfHourInterval = Math.floor(now.getTime() / (20 * 60 * 1000));

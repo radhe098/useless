@@ -1,22 +1,34 @@
 "use client"; 
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { generateSlug } from '@/utils/slug';
 import Image from 'next/image';
 import makima from  "@/public/makima.jpg";
 import askeladd from  "@/public/Askeladd.jpg";
 import makima2 from  "@/public/mmmakim.jpg";
-import { useState } from 'react';
+import {  useState } from 'react';
+import { useEffect } from 'react';
 export default function Page({ params }) {
-
     const [nextpage, setnextpage] =useState(false);
-    setInterval(()=>{
-      setnextpage(!nextpage)
-    }, 4000);
+    const [clickCount, setClickCount] = useState(0);
     const slug1 = generateSlug("askeladd098");
     const slug2 = generateSlug("intervals");
-  
     console.log(`Slug for askeladd098: ${slug1}`);
     console.log(`Slug for anotherConstant: ${slug2}`);
+    const handleClick = () => {
+      setClickCount((prevCount) => prevCount + 1);
+    };
+    // const linkUrl = clickCount === 0 ? `/intervals/${slug2}` : '/ads';
+    const linkUrl = clickCount === 0 ? '/ads' : `/intervals/${slug2}` ;
+    // useEffect(() => {
+      setInterval(() => {
+          setnextpage(!nextpage);
+      }, 5000);
+
+      // Cleanup interval on component unmount
+  //     return () => clearInterval(interval);
+  // }, []);
+   
 
     // console.log(`http://localhost:3000/blogs/${currentHash}`);
     // console.log("Slug from URL:", params.slug);
@@ -24,6 +36,8 @@ export default function Page({ params }) {
   
     if (params.slug === slug1) {
         return <>
+  <Navbar />
+
     <div className="container">
       {/* Top Cover Image */}
       <div className="coverImage">
@@ -36,13 +50,17 @@ export default function Page({ params }) {
           />
       </div>
       {/* Blog Heading */}
-      <h1 className="heading">What If Askeladd and Makima Got Married?</h1>
-      { nextpage ?
-        (<Link className='bg-red-600 text-white rounded-md' href={`/intervals/${slug2}`}>
-          Dashboard
-      </Link>): 
-      null
-      }
+      <h1 className="heading  ">What If Askeladd and Makima Got Married?</h1>
+      <div className=" mb-3  flex items-center justify-center">
+  <div className="m-auto">
+    
+      <p className='bg-red-600 px-4 py-2 text-white rounded-md"'>
+        click on 👆 images👇 to get next page... 
+      </p>
+
+  </div>
+</div>
+
       {/* Blog Content */}
       <div className="content">
       
@@ -97,6 +115,21 @@ export default function Page({ params }) {
             </li>
         </ul>
         
+        <div className=" mb-3  flex items-center justify-center">
+  <div className="m-auto">
+    {nextpage ? (
+      <Link
+        onClick={handleClick}
+        className="bg-red-600 px-4 py-2 text-white rounded-md"
+        href={linkUrl}
+      >
+        Continue
+      </Link>
+    ) : (
+      <p className='bg-red-600 px-4 py-2 text-white rounded-md"'>Loading...</p>
+    )}
+  </div>
+</div>
         <h2>Themes Explored Through Their Marriage</h2>
         <p>A marriage between Askeladd and Makima would provide fertile ground for exploring various themes:</p>
         <ul>
